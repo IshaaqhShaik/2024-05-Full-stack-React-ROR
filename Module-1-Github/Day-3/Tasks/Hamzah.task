@@ -1,0 +1,16 @@
+Task:
+
+Git reset:
+    The git reset command is used to undo the changes in your working directory and get back to a specific commit while discarding all the commits made after that one
+
+    Mixed           cmd: git reset –mixed <commit hash>
+    Soft			cmd: git reset –soft <commit hash>
+    Hard			cmd: git reset –hard<commit hash>
+
+Git revert:
+    The git revert command is  used for undoing changes to a repository’s commit history.
+
+Git Cherrypick:
+    Cherry picking is the act of picking a commit from a branch and applying it to another
+
+Done with practical examples
