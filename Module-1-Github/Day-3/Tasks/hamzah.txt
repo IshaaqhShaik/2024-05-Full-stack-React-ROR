@@ -1,0 +1,5 @@
+
+Tasks about Revert changes from various life cycle locally and remote.
+
+Topic:
+Git reset and Git revert and Git cherry pick..
