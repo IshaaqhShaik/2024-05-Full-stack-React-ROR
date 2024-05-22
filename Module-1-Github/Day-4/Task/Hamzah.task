@@ -1,0 +1,73 @@
+Git rebase:
+This document will serve as an in-depth discussion of the git rebase command. The Rebase command has also been looked at on the setting up a repository and rewriting history pages. This page will take a more detailed look at git rebase configuration and execution. Common Rebase use cases and pitfalls will be covered here.
+
+command for Git rebase:
+# Commands:
+# p, pick = use commit
+# r, reword = use commit, but edit the commit message
+# e, edit = use commit, but stop for amending
+# s, squash = use commit, but meld into previous commit
+# f, fixup = like "squash", but discard this commit's log message
+# x, exec = run command (the rest of the line) using shell
+# d, drop = remove commit
+
+Git Merge:
+Git merge
+Merging is Git's way of putting a forked history back together again. The git merge command lets you take the independent lines of development created by git branch and integrate them into a single branch.
+
+Note that all of the commands presented below merge into the current branch. The current branch will be updated to reflect the merge, but the target branch will be completely unaffected. Again, this means that git merge is often used in conjunction with git checkout for selecting the current branch and git branch -d for deleting the obsolete target branch.
+
+# Start a new feature
+git checkout -b new-feature main
+# Edit some files
+git add <file>
+git commit -m "Start a feature"
+# Edit some files
+git add <file>
+git commit -m "Finish a feature"
+# Merge in the new-feature branch
+git checkout main
+git merge new-feature
+git branch -d new-feature
+
+
+Git Pull:
+The git pull command is used to fetch and download content from a remote repository and immediately update the local repository to match that content. Merging remote upstream changes into your local repository is a common task in Git-based collaboration work flows. The git pull command is actually a combination of two other commands, git fetch followed by git merge. In the first stage of operation git pull will execute a git fetch scoped to the local branch that HEAD is pointed at. Once the content is downloaded, git pull will enter a merge workflow. A new merge commit will be-created and HEAD updated to point at the new commit.
+
+commands of git pull:
+Default Behavior
+git pull
+Git pull on remotes
+git checkout new_feature
+git pull <remote repo>
+Git pull rebase instead of merge
+git checkout main
+git pull --rebase origin
+
+ Git fetch:
+ Git fetch
+The git fetch command downloads commits, files, and refs from a remote repository into your local repo. Fetching is what you do when you want to see what everybody else has been working on. It’s similar to svn update in that it lets you see how the central history has progressed, but it doesn’t force you to actually merge the changes into your repository. Git isolates fetched content from existing local content; it has absolutely no effect on your local development work. Fetched content has to be explicitly checked out using the git checkout command. This makes fetching a safe way to review commits before integrating them with your local repository.
+
+commands of git fetch:
+git fetch <remote>
+git fetch <remote> <branch>
+git fetch --all
+git fetch --dry-run
+
+Git reset
+The git reset command is a complex and versatile tool for undoing changes. It has three primary forms of invocation. These forms correspond to command line arguments --soft, --mixed, --hard. The three arguments each correspond to Git's three internal state management mechanism's, The Commit Tree (HEAD), The Staging Index, and The Working Directory.
+commands:
+git reset ＜file＞
+git reset --hard
+git reset  
+git reset --hard 
+
+Git cherry pick:
+git cherry-pick is a powerful command that enables arbitrary Git commits to be picked by reference and appended to the current working HEAD. Cherry picking is the act of picking a commit from a branch and applying it to another. git cherry-pick can be useful for undoing changes. For example, say a commit is accidently made to the wrong branch. You can switch to the correct branch and cherry-pick the commit to where it should belong.
+
+commands:
+git cherry-pick <commit-hash>
+git cherry-pick <commit-hash1> <commit-hash2> <commit-hash3> ...
+git cherry-pick <start-commit-hash>..<end-commit-hash>
+git cherry-pick --no-commit <commit-hash>
+git cherry-pick --rebase <commit-hash>.
