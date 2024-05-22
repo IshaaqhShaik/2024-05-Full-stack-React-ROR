@@ -70,4 +70,4 @@ git cherry-pick <commit-hash>
 git cherry-pick <commit-hash1> <commit-hash2> <commit-hash3> ...
 git cherry-pick <start-commit-hash>..<end-commit-hash>
 git cherry-pick --no-commit <commit-hash>
-git cherry-pick --rebase <commit-hash>
+git cherry-pick --rebase <commit-hash>.

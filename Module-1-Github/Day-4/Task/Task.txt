@@ -2,4 +2,4 @@ Git Rebase VS Git Merge
 
 Git Pull VS Git Fetch
 
-Git reset & cherry pick
+Git reset & cherry pick.
