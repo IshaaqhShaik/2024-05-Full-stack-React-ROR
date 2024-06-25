@@ -1,0 +1,57 @@
+1. Explain about variable hoistiog with reasoning ?
+
+  Declarations are hoisted, not initializations.
+  Allows calling functions and variables  before their declarations.
+
+
+    Example Program:
+
+   printHello()
+// hello
+
+printDillion()
+// ReferenceError: printDillion is not defined  # this is function in the local scope so we can't acces it by Hoisting.
+
+function printHello() {
+  console.log('hello')
+
+  function printDillion() {
+    console.log("dillion")
+  }
+}
+
+   <!-- Here the variable hoisting is access these variables
+        and function even before you have initialized it or you have
+        put some value in it. you can access it without any error-->
+
+2. Explain about type casting by reasoning with examples ?
+
+A. Type conversion (or typecasting) means transfer of data from one data type to another.
+
+    -> "5" + 5 = '55'  #String + Number is added so the output is '55'
+    ->  5 + "5" = '55'
+    -> "5" + 5 - 5 = 50  # 55-5 = 50 ;
+    -> 6 + true - False   # 6 + true -false  = 6 + 1 - 0 = 7;
+    -> true + "5" = 'true5' #
+    -> false - "1000" + "999" = '-1000999'    # 0-1000+999 = -1000999
+    Ex:
+    let Age = 22;
+     Age = String (Age);                #typecasting of number to string.
+     console.log (Age (typeof (Age)));
+     O/P: 22 String
+3. Define, declare and print typeof datatypes string,Boolean,Number using console.log ?
+
+A. String:
+    Ex: let name = "Farooq";          # o/p= string
+        console.log(typeof (name));
+        O/P: String
+
+    Number:
+    Ex: var Number = 55;
+        console.log(typeof (Number));
+       # O/P: Number
+
+    Boolean:
+    Ex: var Farooq = true;
+        console.log(typeof (Farooq));
+          # O/P: Boolean
