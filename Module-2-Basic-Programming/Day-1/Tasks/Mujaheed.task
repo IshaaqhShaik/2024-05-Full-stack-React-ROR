@@ -1,0 +1,92 @@
+1. Explain about variable hoisting with reasoning ?
+
+A. 1. Declarations are hoisted, not initializations.
+   2. Allows calling functions before their declarations.
+   3. All variable and function declarations are processed before any code execution.
+   4. Undeclared variables are implicitly created as global variables when assigned a value.
+
+    Reasons behind Hoisting:
+
+JavaScript Engine Behavior: 
+    JavaScript engines (like V8 in Chrome, SpiderMonkey in Firefox, etc.) move variable declarations to the top of their containing scope during the compilation phase. This behavior is part of how JavaScript is designed to work.
+
+Scope Visibility: 
+    Hoisting allows you to use variables before they are declared, although it's generally considered a good practice to declare variables at the beginning of their scope to avoid confusion and potential bugs.
+
+ Hoisting with Different Declarations:
+    var: Variables declared with var are hoisted to the top of their scope. If you access a var variable before its declaration, you get undefined.
+
+    console.log(myVar); // undefined
+    var myVar = 10;
+    
+    let and const: Variables declared with let and const are also hoisted to the top of their scope, but they are not initialized (unlike var). Accessing them before their declaration causes a ReferenceError.
+
+    console.log(myVar); // ReferenceError: Cannot access 'myVar' before initialization
+    let myVar = 10;
+
+    Function Declarations vs. Function Expressions:
+        
+        Function Declarations: Entire function declarations are hoisted, so they can be used before they appear in the code.
+
+    foo(); // "Hello"
+    function foo() {
+        console.log("Hello");
+    }
+
+    Function Expressions: Only the variable declaration (not the assignment) is hoisted.
+
+    bar(); // TypeError: bar is not a function
+    var bar = function() {
+        console.log("World");
+    };
+
+2. Explain about type casting by reasoning with examples ?
+
+A. Type conversion (or typecasting) means transfer of data from one data type to another.
+
+    -> "5" + 5 = '55' 
+    
+    Reasoning:
+    //When the + operator is used with a string and another value (whether it's a number, boolean, or object), JavaScript performs string concatenation.
+
+    ->  5 + "5" = '55' 
+    
+    Reasoning:
+    // When the + operator is used with a string and another value (whether it's a number, boolean, or object), JavaScript performs string concatenation.
+
+    -> "5" + 5 - 5 = 50 
+    
+    Reasoning:
+    // here the '-' operator not perform as a string because it is not supported it behaves like a number only after the concatination. The - operator expects numeric operands, so JavaScript tries to convert the string "55" into a number for subtraction.
+
+    -> true + "5" = 'true5' 
+    
+    Reasoning:
+    // JavaScript automatically converts values to the appropriate types when using the + operator. If one of the operands is a string, JavaScript treats the other operand as a string as well.
+
+    -> false - "1000" + "999" = '-1000999' 
+    
+    Reasoning:
+    // When we use '+' with two strings, JavaScript converts both operands to strings and then concatenates them is called "type coercion".
+   
+    Ex:
+    let result; result = "3" + 2; 
+    console.log(result, "-", typeof(result));
+    O/P:2 32 - string
+    
+3. Define, declare and print typeof datatypes string,Boolean,Number using console.log ?
+
+A. String:
+    Ex: let name = "Farooq";
+        console.log(typeof (name));
+        O/P: String
+
+    Number:
+    Ex: var Age = 55;
+        console.log(typeof (Age));
+        O/P: Number
+
+    Number:
+    Ex: var Mujju = true
+        console.log(typeof (Mujju));
+        O/P: Boolean
