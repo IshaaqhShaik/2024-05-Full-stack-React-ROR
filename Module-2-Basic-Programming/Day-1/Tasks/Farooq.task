@@ -1,7 +1,7 @@
 1. Explain about variable hoistiog with reasoning ?
 
   Declarations are hoisted, not initializations.
-  Allows calling functions before their declarations.
+  Allows calling functions and variables  before their declarations.
 
 
     Example Program:
