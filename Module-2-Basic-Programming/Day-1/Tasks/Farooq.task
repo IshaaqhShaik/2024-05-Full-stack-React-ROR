@@ -1,4 +1,4 @@
-1. Explain about variable hoistiog with reasoning ?
+1. Explain about variable hoisting with reasoning ?
 
   Declarations are hoisted, not initializations.
   Allows calling functions and variables  before their declarations.
@@ -10,7 +10,7 @@
 // hello
 
 printDillion()
-// ReferenceError: printDillion is not defined  # this is function in the local scope so we can't acces it by Hoisting.
+// ReferenceError: printDillion is not defined  # this is function in the local scope so we can't access it by Hoisting.
 
 function printHello() {
   console.log('hello')
@@ -28,17 +28,41 @@ function printHello() {
 
 A. Type conversion (or typecasting) means transfer of data from one data type to another.
 
-    -> "5" + 5 = '55'  #String + Number is added so the output is '55'
-    ->  5 + "5" = '55'
+    -> "5" + 5 = '55'  # In javascript when you use (+) with String it converts the number to String  "5"+5 therefore here 5 is converted to String then this  Results in 55.
+    ->  5 + "5" = '55'  # In javascript when you use (+) with String it converts the number to String  5+ "5" results in 55
     -> "5" + 5 - 5 = 50  # 55-5 = 50 ;
+    First operation :
+    "5"+5 = "55" Here 5 is converted to string and the result is 55
+    Second operation:
+    "55"-5=50 #  Here we are performing (-) so the string is converted to number and the reuslt is 50
     -> 6 + true - False   # 6 + true -false  = 6 + 1 - 0 = 7;
-    -> true + "5" = 'true5' #
+    In java script Booleans are converted to Numbers while doing arthemetic operation so 
+    First operation:
+    6+ true = 6+1 = 7;
+    Second operation:
+    7-false = 7-0 = 7;
+    then final result is 7;
+
+    -> true + "5" = 'true5'
+    In javascript when you (+) Between String and Boolean, Boolean is converted to String
+    here true is converted to string "true" if we concate String  to string the result is 'true5'
     -> false - "1000" + "999" = '-1000999'    # 0-1000+999 = -1000999
-    Ex:
+    First operation:
+    Here the false is 0
+    0 - "1000" here the 1000 is converted to number and results in 1000
+    Second operation:
+     Here again the 1000 is converted to String because here we are concating the number with string so the result is -1000999
+     and final result is in string.
+
+
+    Ex:typecasting Number to a String
     let Age = 22;
      Age = String (Age);                #typecasting of number to string.
-     console.log (Age (typeof (Age)));
-     O/P: 22 String
+     console.log (Age ,(typeof (Age)));   Here we are converting the number to String by using the  keyword Before the Variable to which we want to convert to String.
+      O/P: 22 String                                      by using that we will convert to number to Sting .
+                                            # In the console we are printing the Variable and as well we are checking the type by using typeof (variable) Which type it is now. 
+                                            the result shows us  22 Number as "String"
+
 3. Define, declare and print typeof datatypes string,Boolean,Number using console.log ?
 
 A. String:
