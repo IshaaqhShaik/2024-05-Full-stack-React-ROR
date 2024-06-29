@@ -1,0 +1,20 @@
+
+1.Git rebase
+This document will serve as an in-depth discussion of the git rebase command. The Rebase command has also been looked at on the setting up a repository and rewriting history pages. This page will take a more detailed look at git rebase configuration and execution. Common Rebase use cases and pitfalls will be covered here.
+
+2.Git merge
+Merging is Git's way of putting a forked history back together again. The git merge command lets you take the independent lines of development created by git branch and integrate them into a single branch.
+
+Note that all of the commands presented below merge into the current branch. The current branch will be updated to reflect the merge, but the target branch will be completely unaffected. Again, this means that git merge is often used in conjunction with git checkout for selecting the current branch and git branch -d for deleting the obsolete target branch.
+
+Git Rebase & Git Merge (differenc)
+Merging is a safe option that preserves the entire history of your repository, while rebasing creates a linear history by moving your feature branch onto the tip of main .
+
+3.Git pull
+The git pull command is used to fetch and download content from a remote repository and immediately update the local repository to match that content. Merging remote upstream changes into your local repository is a common task in Git-based collaboration work flows. The git pull command is actually a combination of two other commands, git fetch followed by git merge. 
+
+4.Git fetch
+The git fetch command downloads commits, files, and refs from a remote repository into your local repo. Fetching is what you do when you want to see what everybody else has been working on. It’s similar to svn update in that it lets you see how the central history has progressed, but it doesn’t force you to actually merge the changes into your repository. Git isolates fetched content from existing local content; it has absolutely no effect on your local development work. Fetched content has to be explicitly checked out using the git checkout command.
+
+5.Git Pull VS Git Fetch differenc 
+"git pull" automatically merges the fetched changes into the current branch, while "git fetch" does not. This makes "git pull" a more convenient command if you want to quickly update your local branch with changes from the remote repository.
